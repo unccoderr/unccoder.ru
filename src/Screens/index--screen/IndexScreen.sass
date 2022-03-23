@@ -1,0 +1,288 @@
+@use '../../Sass/typography'
+@use '../../Sass/gradients'
+@use '../../Sass/colors'
+
+@mixin mainSurfaceBackground
+	&[data-theme=light]
+		background: colors.$light-surface-main
+	&[data-theme=dark]
+		background: colors.$dark-surface-main
+@mixin secondarySurfaceBackground
+	&[data-theme=light]
+		background: colors.$light-surface-secondary
+	&[data-theme=dark]
+		background: colors.$dark-surface-secondary
+		
+@mixin mainTextColor
+	&[data-theme=light]
+		color: colors.$light-text-main
+	&[data-theme=dark]
+		color: colors.$dark-text-main
+		
+@mixin mainTextFill
+	&[data-theme=light]
+		fill: colors.$light-text-main
+	&[data-theme=dark]
+		fill: colors.$dark-text-main
+
+
+.main-page
+	height: 100%
+	@include mainSurfaceBackground
+	@include mainTextColor
+	&-container
+		padding: 0 16px
+		width: 60%
+		min-width: 858px
+		margin: 0 auto
+	&-navbar
+		z-index: 1
+		position: sticky
+		top: 0
+		@include mainSurfaceBackground
+		&[data-theme=light]
+			border-bottom: 1px solid colors.$light-surface-secondary
+		&[data-theme=dark]
+			border-bottom: 1px solid colors.$dark-surface-secondary
+		&-wrapper
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding-top: 16px
+			padding-bottom: 16px
+			& > a
+				font-weight: 600
+				font-size: 24px
+				line-height: 29px
+				@include mainTextColor
+			& ul
+				list-style: none
+				display: flex
+				& li
+					& a
+						transition: .1s ease-out
+						opacity: .7
+						@include typography.p2
+						@include mainTextColor
+						&:hover
+							opacity: 1
+					&:not(:last-child)
+						padding-right: 18px
+			& div
+				display: flex
+				align-items: center
+				& button
+					cursor: pointer
+					border: 0
+					background: none
+					& svg
+						@include mainTextFill
+					&:not(:last-child)
+						margin-right: 18px
+	&-wrapper
+		@include mainSurfaceBackground
+		padding: 60px 0
+	&-breadcrumbs
+		list-style: none
+		display: flex
+		flex-wrap: wrap
+		padding-bottom: 60px
+		& li
+			padding: 12px 18px
+			border-radius: 20px
+			@include secondarySurfaceBackground
+			&:not(:last-child)
+				margin-right: 20px
+	&-section
+		&:not(:first-child)
+			padding-top: 125px
+		& h1, & h2
+			@include typography.h1
+			padding-bottom: 18px
+		&__intro
+			& h1
+				display: inline-flex
+				align-items: center
+				& span
+					margin-left: 12px
+					display: inline-block
+					height: 50px
+					width: 50px
+					background-size: cover
+					background-image: url("../../Assets/hello.png")
+			& p
+				@include typography.p1
+		&__stack
+			& ul
+				list-style: none
+				display: grid
+				grid-template-columns: 1fr 1fr
+				grid-gap: 18px
+				& li
+					transition: transform .1s ease-out
+					padding: 32px 30px
+					border-radius: 18px
+					display: flex
+					justify-content: space-between
+					align-items: flex-end
+					&:hover
+						transform: scale(1.04)
+					& h3
+						color: colors.$dark-surface-secondary
+						@include typography.h2
+					& svg
+						fill: colors.$dark-surface-secondary
+					&#javascript
+						background: gradients.$javascript
+					&#typescript
+						background: gradients.$typescript
+					&#html
+						background: gradients.$html
+					&#css
+						background: gradients.$css
+					&#react
+						background: gradients.$react
+					&#redux
+						background: gradients.$redux
+					&#mongodb
+						background: gradients.$mongodb
+					&#linux
+						background: gradients.$deployment
+		&__contacts
+			display: grid
+			grid-template-columns: 1fr 1fr
+			grid-gap: 18px
+			& a
+				transition: background, opacity .1s ease-out
+				padding: 16px 18px
+				border-radius: 18px
+				display: flex
+				align-items: center
+				justify-content: center
+				@include secondarySurfaceBackground
+				@include mainTextColor
+				opacity: .8
+				@include typography.p1
+				&:hover
+					opacity: 1
+				& svg
+					margin-right: 12px
+					@include mainTextFill
+				&:last-child
+					grid-column: 1 / 3
+	&-footer
+		&[data-theme=light]
+			border-top: 1px solid colors.$light-surface-secondary
+		&[data-theme=dark]
+			border-top: 1px solid colors.$dark-surface-secondary
+		padding: 12px
+		&-wrapper
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding-top: 16px
+			padding-bottom: 16px
+			& > a
+				font-weight: 600
+				font-size: 24px
+				line-height: 29px
+				@include mainTextColor
+			& ul
+				list-style: none
+				display: flex
+				& li
+					& a
+						transition: .1s ease-out
+						opacity: .7
+						@include typography.p2
+						@include mainTextColor
+						&:hover
+							opacity: 1
+					&:not(:last-child)
+						padding-right: 18px
+			& div
+				display: flex
+				align-items: center
+				& button
+					cursor: pointer
+					border: 0
+					background: none
+					& svg
+						@include mainTextFill
+					&:not(:last-child)
+						margin-right: 18px
+@media screen and (max-width: 900px)
+	.main-page
+		&-container
+			width: 86%
+			min-width: 500px
+		&-section
+			&__stack
+				& ul
+					grid-template-columns: 1fr
+@media screen and (max-width: 750px)
+	.main-page
+		&-section
+			&__contacts
+				grid-template-columns: 1fr
+				& a
+					flex-direction: row-reverse
+					justify-content: space-between
+					&:last-child
+						grid-column: 1
+@media screen and (max-width: 530px)
+	.main-page
+		&-wrapper
+			padding: 40px 0
+		&-container
+			width: 95%
+			min-width: 200px
+		&-breadcrumbs
+			padding-bottom: 40px
+			& li
+				&:not(:last-child)
+					margin-right: 12px
+		&-section
+			&:not(:first-child)
+				padding-top: 80px
+			& h1, h2
+				font-size: 38px
+				padding-bottom: 16px
+			&__intro
+				& h1
+					& span
+						display: none
+				& p
+					font-size: 24px
+			&__stack
+				& ul
+					grid-gap: 14px
+					& li
+						padding: 20px 30px
+						display: flex
+						& h3
+							height: auto
+							@include typography.p1
+						& svg
+							width: 36px
+							height: 36px
+			&__contacts
+				grid-gap: 14px
+		&-navbar, &-footer
+			&-wrapper
+				padding: 10px 16px
+				& a
+					font-size: 20px
+				& ul
+					display: none
+				& div
+					& svg
+						height: 20px
+						width: 20px
+				
+
+@media screen and (max-width: 371px)
+	.main-page
+		&-breadcrumbs
+			& li
+				margin-top: 12px
