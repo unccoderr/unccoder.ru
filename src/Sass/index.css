@@ -15,4 +15,59 @@ a {
   text-decoration: none;
 }
 
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#root[data-theme=light] {
+  background: #FFFFFF;
+}
+#root[data-theme=dark] {
+  background: #323232;
+}
+#root[data-theme=light] {
+  color: #323232;
+}
+#root[data-theme=dark] {
+  color: #FFFFFF;
+}
+
+.container {
+  padding: 0 16px;
+  width: 60%;
+  min-width: 858px;
+  margin: 0 auto;
+}
+
+.page {
+  padding: 60px 0;
+}
+.page[data-theme=light] {
+  background: #FFFFFF;
+}
+.page[data-theme=dark] {
+  background: #323232;
+}
+.page[data-theme=light] {
+  color: #323232;
+}
+.page[data-theme=dark] {
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 86%;
+    min-width: 500px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .container {
+    width: 95%;
+    min-width: 200px;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */

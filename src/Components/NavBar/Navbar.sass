@@ -1,0 +1,66 @@
+@use '../../Sass/typography'
+@use '../../Sass/gradients'
+@use '../../Sass/colors'
+
+.navbar
+	padding: 16px 0
+	@include colors.mainSurfaceBackground
+	&_nav
+		z-index: 1
+		position: sticky
+		top: 0
+		&[data-theme=light]
+			border-bottom: 1px solid colors.$light-surface-secondary
+		&[data-theme=dark]
+			border-bottom: 1px solid colors.$dark-surface-secondary
+	&_footer
+		&[data-theme=light]
+			border-top: 1px solid colors.$light-surface-secondary
+		&[data-theme=dark]
+			border-top: 1px solid colors.$dark-surface-secondary
+	&-wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+		&__logo
+			font-weight: 600
+			font-size: 24px
+			line-height: 29px
+			@include colors.mainTextColor
+		&__list
+			list-style: none
+			display: flex
+			gap: 18px
+			&-item
+				transition: .1s ease-out
+				opacity: .7
+				@include typography.p2
+				@include colors.mainTextColor
+				&_active
+					opacity: 1
+				&:hover
+					opacity: 1
+		&__buttons
+			display: flex
+			align-items: center
+			& button
+				cursor: pointer
+				border: 0
+				background: none
+				& svg
+					@include colors.mainTextFill
+				&:not(:last-child)
+					margin-right: 18px
+
+@media screen and (max-width: 650px)
+	.navbar
+		&-wrapper
+			padding: 10px 16px
+			& a
+				font-size: 20px
+			& ul
+				display: none
+			& div
+				& svg
+					height: 20px
+					width: 20px

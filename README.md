@@ -8,5 +8,5 @@
 * Typescript
 
 ### Functions
-* Switching localization from EN to RU 
+* Switching indexLocalization from EN to RU 
 * Switching theme

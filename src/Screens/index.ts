@@ -1,1 +1,2 @@
-export * from './index--screen/IndexScreen'
+export * from './index--screen/index.screen'
+export * from './skills--screen/skills.screen'

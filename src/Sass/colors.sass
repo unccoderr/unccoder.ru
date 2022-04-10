@@ -5,3 +5,26 @@ $light-text-main: #323232
 $dark-surface-main: #323232
 $dark-surface-secondary: #3F3F3F
 $dark-text-main: #FFFFFF
+
+@mixin mainSurfaceBackground
+	&[data-theme=light]
+		background: $light-surface-main
+	&[data-theme=dark]
+		background: $dark-surface-main
+@mixin secondarySurfaceBackground
+	&[data-theme=light]
+		background: $light-surface-secondary
+	&[data-theme=dark]
+		background: $dark-surface-secondary
+
+@mixin mainTextColor
+	&[data-theme=light]
+		color: $light-text-main
+	&[data-theme=dark]
+		color: $dark-text-main
+
+@mixin mainTextFill
+	&[data-theme=light]
+		fill: $light-text-main
+	&[data-theme=dark]
+		fill: $dark-text-main

@@ -1,0 +1,71 @@
+@use '../../Sass/typography'
+@use '../../Sass/gradients'
+@use '../../Sass/colors'
+
+.skills-page
+	& > *:not(:last-child)
+		padding-bottom: 60px
+	&__tabs
+		list-style: none
+		display: flex
+		gap: 20px
+		flex-wrap: wrap
+		&-item
+			transition: .2s ease-out
+			display: inline-block
+			padding: 12px 18px
+			border-radius: 23px
+			@include colors.secondarySurfaceBackground
+			@include typography.crumb
+			@include colors.mainTextColor
+			&_html, &_ts, &_react, &_db
+				color: colors.$light-text-main !important
+			&_html
+				background: gradients.$html !important
+			&_ts
+				background: gradients.$typescript !important
+			&_react
+				background: gradients.$react !important
+			&_db
+				background: gradients.$mongodb !important
+	&__info
+		& h1
+			@include typography.h1
+			padding-bottom: 18px
+		& p
+			@include typography.p1
+	&__stack
+		list-style: none
+		display: flex
+		gap: 18px
+		flex-wrap: wrap
+		&-item
+			padding: 24px
+			border-radius: 18px
+			@include colors.secondarySurfaceBackground
+			border: 0
+			font-weight: 600
+			font-size: 24px
+			line-height: 29px
+			@include colors.mainTextColor
+
+@media screen and (max-width: 530px)
+	.skills-page
+		
+		& > *:not(:last-child)
+			padding-bottom: 40px
+		&__info
+			& h1
+				font-size: 38px
+				padding-bottom: 16px
+				line-height: 110%
+			& p
+				font-size: 24px
+		&__tabs
+			gap: 12px
+			padding-bottom: 40px
+		&__stack
+			gap: 12px
+			&-item
+				padding: 18px
+				font-size: 18px

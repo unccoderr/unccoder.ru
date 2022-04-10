@@ -1,0 +1,108 @@
+.skills-page > *:not(:last-child) {
+  padding-bottom: 60px;
+}
+.skills-page__tabs {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.skills-page__tabs-item {
+  transition: 0.2s ease-out;
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 23px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+.skills-page__tabs-item[data-theme=light] {
+  background: #F7F7F7;
+}
+.skills-page__tabs-item[data-theme=dark] {
+  background: #3F3F3F;
+}
+.skills-page__tabs-item[data-theme=light] {
+  color: #323232;
+}
+.skills-page__tabs-item[data-theme=dark] {
+  color: #FFFFFF;
+}
+.skills-page__tabs-item_html, .skills-page__tabs-item_ts, .skills-page__tabs-item_react, .skills-page__tabs-item_db {
+  color: #323232 !important;
+}
+.skills-page__tabs-item_html {
+  background: linear-gradient(78.11deg, #FDE7EA 17.39%, #FDEFDA 82.61%) !important;
+}
+.skills-page__tabs-item_ts {
+  background: linear-gradient(129.28deg, #DED9FF 0%, #CBEFFF 101.28%) !important;
+}
+.skills-page__tabs-item_react {
+  background: linear-gradient(308.49deg, #DAFCFC 0%, #F9E7FE 100%) !important;
+}
+.skills-page__tabs-item_db {
+  background: linear-gradient(51.51deg, #E6FFF7 0%, #E4FFE0 100%) !important;
+}
+.skills-page__info h1 {
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 61px;
+  padding-bottom: 18px;
+}
+.skills-page__info p {
+  font-size: 28px;
+  line-height: 34px;
+}
+.skills-page__stack {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.skills-page__stack-item {
+  padding: 24px;
+  border-radius: 18px;
+  border: 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+.skills-page__stack-item[data-theme=light] {
+  background: #F7F7F7;
+}
+.skills-page__stack-item[data-theme=dark] {
+  background: #3F3F3F;
+}
+.skills-page__stack-item[data-theme=light] {
+  color: #323232;
+}
+.skills-page__stack-item[data-theme=dark] {
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 530px) {
+  .skills-page > *:not(:last-child) {
+    padding-bottom: 40px;
+  }
+  .skills-page__info h1 {
+    font-size: 38px;
+    padding-bottom: 16px;
+    line-height: 110%;
+  }
+  .skills-page__info p {
+    font-size: 24px;
+  }
+  .skills-page__tabs {
+    gap: 12px;
+    padding-bottom: 40px;
+  }
+  .skills-page__stack {
+    gap: 12px;
+  }
+  .skills-page__stack-item {
+    padding: 18px;
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=SkillsScreen.css.map */
