@@ -1,5 +1,5 @@
 # unccoder.ru
-> Personal portfolio website
+> Made by [unccoderr](https://github.com/unccoderr)
 
 
 ### Stack
